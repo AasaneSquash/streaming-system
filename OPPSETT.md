@@ -38,7 +38,36 @@ Oversikt over komponenter og kostnader per bane:
 2. **Mikrofon:** Plasseres slik at den fanger opp lyd fra banen uten å ta opp unødig støy fra tilskuerområdet, og kobles i HP Mini PC-en.
 3. **HDMI Plugg (Dummy Plug):** Plugges i HDMI-utgangen (eventuelt via DisplayPort-adapter) på HP Mini PC-en.
    * *Teknisk begrunnelse:* Uten en aktiv skjerm tilkoblet vil Windows deaktivere GPU-rendring. Dette fører til at både OBS Studio og RustDesk feiler eller viser svart skjerm ved ekstern tilkobling.
-4. **Nettverk:** HP Mini PC skal være tilkoblet kablet nettverk (Ethernet) for stabil opplastingshastighet til YouTube.
+4. **Nettverk:** HP Mini PC skal være tilkoblet kablet nettverk (Ethernet) for stabil opplastingshastighet til YouTube. Et stabilt trådløst nettverk med god kapasitet vil ogå fungere. 
+
+
+```mermaid
+graph LR
+    subgraph Squashbane
+        K[Kamera]
+        M[Mikrofon]
+        S[Strøm med overgang]
+    end
+
+    subgraph Strømme-PC
+        PC[OBS Studio]
+        D[HDMI Dummy Plug]
+    end
+
+    subgraph Sky og Styring
+        YT[YouTube Live]
+        R[RankedIn Scoreboard]
+        FJ[Fjernstyring via Tailscale & RustDesk]
+    end
+
+    S -->|Strøm| K
+    K -->|Video| PC
+    M -->|Lyd| PC
+    D -->|Simulerer skjerm| PC
+    R -->|Browser Source| PC
+    PC -->|RTMP-strøm| YT
+    FJ <-->|VPN / Kontroll| PC
+```
 
 ---
 
@@ -83,7 +112,7 @@ For at HP Mini PC-en skal kreve minimalt med fysisk tilsyn etter strømbrudd ell
 - **Settings -> Output (Streaming):**
   * *Video Encoder:* Velg maskinvarebasert koding (**QuickSync H.264 / QSV**) for å avlaste prosessoren på HP Mini PC-en.
   * *Rate Control:* `CBR`
-  * *Bitrate:* `6000 Kbps` (for 1080p30) eller `8000–9000 Kbps` (for 1080p60).
+  * *Bitrate:* `6000 Kbps` (for 1080p30) eller `8000–10000 Kbps` (for 1080p60). Ved for lav bitrate vil ikke bildet bli skarpt nok.
 - **Settings -> General (Output):**
   * Sørg for at **Automatically record when streaming** er **AVSLÅTT**. Ingen videofiler skal lagres lokalt på disken.
 
