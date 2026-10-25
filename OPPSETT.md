@@ -21,8 +21,10 @@ Oversikt over komponenter og kostnader per bane:
 | Leverandør | Produkt | Stk. | Pris (NOK) | Total Pris (NOK) | Rolle i oppsettet |
 | :--- | :--- | :---: | :---: | :---: | :--- |
 | SDTNOVA | Kamera | 1 | 2 108,00 | 2 108,00 | Hovedkamera mot squashbanen |
-| Kjell & Company | Overgangsplugg USA | 1 | 130,00 | 130,00 | Adapter for strømforsyning til kamera/utstyr |
+| Kjell & Company | Overgangsplugg USA | 1 | 130,00 | 130,00 | USA Adapter for strømforsyning til kamera/utstyr |
+| Clas Ohlson | Strømadapter | 1 | 99,90 | 99,90 | Alternativ adapter for SDTNOVA |
 | Sound1 | Mikrofon | 1 | 251,00 | 251,00 | Fanger opp banelyd |
+| Kjell & Company | AUX 3,5 mm forlenger | 1 | 99,90 | 99,90 | Forlenge lydkabel fra Mic til PC (ved behov) |
 | Bergen Brukt PC | HP Mini PC | 1 | 2 500,00 | 2 500,00 | Strømme-PC som kjører OBS, Tailscale og RustDesk |
 | Nördic Sweden | HDMI Plugg | 1 | 180,00 | 180,00 | Dummy-plugg som simulerer tilkoblet skjerm |
 | - | Hann-Hann 1/4" skrue | 1 | 66,67 | 66,67 | Overgangsskrue for kamerafeste |
